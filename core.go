@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"runtime"
+	"time"
 )
 
 func main() {
@@ -105,6 +106,26 @@ func main() {
 		fallthrough
 	default:
 		fmt.Println("printed because of ALL The fallthrough statements: this is the default case for x")
+	}
+
+	ch1 := make(chan int)
+	ch2 := make(chan int)
+	d1 := rand.Intn(1000) // random microsecond delay
+	d2 := rand.Intn(1000)
+	go func() {
+		time.Sleep(time.Duration(d1) * time.Microsecond)
+		ch1 <- 41
+	}()
+	go func() {
+		time.Sleep(time.Duration(d2) * time.Microsecond)
+		ch2 <- 42
+	}()
+	select {
+	case v1 := <-ch1:
+		fmt.Println("value from channel", v1)
+	case v2 := <-ch2:
+		fmt.Println("value from channel", v2)
+
 	}
 
 }
