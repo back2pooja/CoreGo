@@ -14,7 +14,7 @@ func main() {
 	}
 	fmt.Println("This is the first statement to run")
 	fmt.Println("This is the second statement to run")
-	x := 50
+	x := 42
 	y := 5
 
 	fmt.Printf("x=%v, y=%v\n", x, y)
@@ -74,7 +74,8 @@ func main() {
 	default:
 		fmt.Println("x is default case for x ", x)
 	}
-
+	/* switch = scd (switch , case , default)
+	 */
 	switch x {
 	case 40:
 		fmt.Println("x is LESS THAN 40 ", x)
@@ -88,4 +89,22 @@ func main() {
 		fmt.Println("x is default case for x ", x)
 
 	}
+	switch x {
+	case 40:
+		fmt.Println("x is 40", x)
+		fallthrough
+	case 41:
+		fmt.Println("printed because of fallthrought: x is 41")
+		fallthrough
+	case 42:
+		fmt.Println("printed because of fallthrought x is 42")
+		fallthrough
+
+	case 43:
+		fmt.Println("printed because of fallthrough x is 43")
+		fallthrough
+	default:
+		fmt.Println("printed because of ALL The fallthrough statements: this is the default case for x")
+	}
+
 }
