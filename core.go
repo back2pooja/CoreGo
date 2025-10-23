@@ -14,7 +14,7 @@ func main() {
 	}
 	fmt.Println("This is the first statement to run")
 	fmt.Println("This is the second statement to run")
-	x := 42
+	x := 50
 	y := 5
 
 	fmt.Printf("x=%v, y=%v\n", x, y)
@@ -59,5 +59,33 @@ func main() {
 		fmt.Printf("z is %v and GREATER THAN OR EQUALS x which is %v\n\n", z, x)
 	} else {
 		fmt.Printf("z is %v and that is LESS THAN x which is %v\n\n", z, x)
+	}
+	fmt.Println(rand.Intn(2))
+	fmt.Println(rand.Intn(2))
+	fmt.Println(rand.Intn(2))
+
+	switch {
+	case x < 42:
+		fmt.Println("x is LESS THAN ", x)
+	case x == 42:
+		fmt.Println("x is EQUAL to 42 ", x)
+	case x > 42:
+		fmt.Println("x is GREATER THAN ", x)
+	default:
+		fmt.Println("x is default case for x ", x)
+	}
+
+	switch x {
+	case 40:
+		fmt.Println("x is LESS THAN 40 ", x)
+	case 41:
+		fmt.Println("x is GREATER THAN 41", x)
+	case 42:
+		fmt.Println("x is EQUAL to 42 ", x)
+	case 43:
+		fmt.Println("x is EQUAL to 43  ", x)
+	default:
+		fmt.Println("x is default case for x ", x)
+
 	}
 }
