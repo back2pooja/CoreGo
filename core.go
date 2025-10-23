@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"runtime"
 )
 
@@ -14,7 +15,8 @@ func main() {
 	fmt.Println("This is the first statement to run")
 	fmt.Println("This is the second statement to run")
 	x := 42
-	y := 42
+	y := 5
+
 	fmt.Printf("x=%v, y=%v\n", x, y)
 	if x < 42 {
 		fmt.Println("Less than the meaning of life")
@@ -47,10 +49,15 @@ func main() {
 	}
 
 	if x > 30 || x < 42 {
-		fmt.Println("x is greater than the meaning of life")
+		fmt.Println("x is getting close to the meaning of life")
 	}
 	if x != 42 && y != 10 {
 		fmt.Println("x is not 42 and y is not 10")
 	}
 
+	if z := 2 * rand.Intn(x); z >= x {
+		fmt.Printf("z is %v and GREATER THAN OR EQUALS x which is %v\n\n", z, x)
+	} else {
+		fmt.Printf("z is %v and that is LESS THAN x which is %v\n\n", z, x)
+	}
 }
