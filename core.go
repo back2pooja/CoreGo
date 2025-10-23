@@ -120,11 +120,15 @@ func main() {
 		time.Sleep(time.Duration(d2) * time.Microsecond)
 		ch2 <- 42
 	}()
+	/* select is used to write a concurrent code where in switch we write conditional code.
+	A "Select" statement chooses which of a set possible send or receive operation will proceed
+	   It looks similar to a "switch" statement but with the casr all referring to communication operation.
+	*/
 	select {
 	case v1 := <-ch1:
-		fmt.Println("value from channel", v1)
+		fmt.Println("value from channel 1", v1)
 	case v2 := <-ch2:
-		fmt.Println("value from channel", v2)
+		fmt.Println("value from channel 2", v2)
 
 	}
 
