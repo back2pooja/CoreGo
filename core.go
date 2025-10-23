@@ -16,5 +16,21 @@ func main() {
 	x := 40
 	y := 5
 	fmt.Printf("x=%v, y=%v\n", x, y)
+	if x < 42 {
+		fmt.Println("Less than the meaning of life")
+	}
+
+	if x < 42 {
+		fmt.Println("Less than the meaning of life")
+	} else {
+		fmt.Println("equals to, or greater than, the meaning of life")
+	}
+	if x < 42 {
+		fmt.Println("Less than the meaning of life")
+	} else if x == 42 {
+		fmt.Println("equals to the meaning of life")
+	} else {
+		fmt.Println("greater than the meaning of life")
+	}
 
 }
