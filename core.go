@@ -112,12 +112,36 @@ func main() {
 		fmt.Println("ranging over a slice", i, v)
 	}
 
-	m := map[string]int{
+	/*m := map[string]int{
 		"James": 99,
 		"Pooja": 98,
-	}
-	for k, v := range m {
+	}*/
+	/*for k, v := range m {
 		fmt.Println("Ranging over a map", k, v)
 	}
+	*/
+	fmt.Println("-------------------------------------------")
+	c := 1
+	for i := 0; i < 100; i++ {
+		if x := rand.Intn(5); x == 3 {
+			fmt.Printf("Iteration %v \n and the total count is %v and x is %v ", i, c, x)
+		}
+	}
+	fmt.Println("-------------------------------------------")
+	m := map[string]int{
+		"James":       42,
+		"Money penny": 32,
+	}
+	for k, v := range m {
+		fmt.Printf("Key %v \t value is%v\n", k, v)
+	}
+	age1 := m["James"]
+	fmt.Printf("The age is %v\n", age1)
 
+	age2 := m["Q"]
+	fmt.Printf("The age is %v\n", age2)
+
+	if v, ok := m["James"]; !ok {
+		fmt.Printf("The age is %v\n", v)
+	}
 }
