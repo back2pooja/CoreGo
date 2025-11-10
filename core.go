@@ -150,4 +150,5 @@ func main() {
 			fmt.Printf(" outer loop %v\t inner loop %v\n", i, j)
 		}
 	}
+
 }
