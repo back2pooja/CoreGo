@@ -36,4 +36,5 @@ func main() {
 	xs = append(xs[:3], xs[6:]...)
 	fmt.Println(xs)
 
+
 }
